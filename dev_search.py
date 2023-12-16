@@ -10,6 +10,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.output_parsers import ResponseSchema, StructuredOutputParser
 import pandas as pd  
+import openai
 import time
 
 
@@ -21,6 +22,7 @@ if "Request to Contact" not in st.session_state:
     st.session_state["Request to Contact"] = False
 
 def main():
+    openai.api_key = constants.OPENAI_API_KEY
     st.set_page_config(layout="centered", page_icon = "rocket")
     hide_streamlit_style = """
         <style>
