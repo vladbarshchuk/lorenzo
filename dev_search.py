@@ -81,7 +81,7 @@ def main():
 
     #API_KEY = os.getenv("OPENAI_API_KEY")
     
-    chat_llm = ChatOpenAI(temperature=0.0, api_key=os.getenv('OPENAI_API_KEY'))
+    chat_llm = ChatOpenAI(temperature=0.0, openai_api_key=os.getenv('OPENAI_API_KEY'))
 
     #url = "https://docs.google.com/spreadsheets/d/1_JsZEuAk7ikUgqy4MRj57xpra1XcDzu2Fu2GSRIBp3c/edit?usp=sharing"
 
@@ -92,7 +92,7 @@ def main():
     df_form = df_form.dropna(how="all")
     
 
-    agent = create_pandas_dataframe_agent(ChatOpenAI(temperature=0, model="gpt-3.5-turbo-1106", api_key=os.getenv('OPENAI_API_KEY')),df,agent_type=AgentType.OPENAI_FUNCTIONS,)
+    agent = create_pandas_dataframe_agent(ChatOpenAI(temperature=0, model="gpt-3.5-turbo-1106", openai_api_key=os.getenv('OPENAI_API_KEY')),df,agent_type=AgentType.OPENAI_FUNCTIONS,)
     
     
     
