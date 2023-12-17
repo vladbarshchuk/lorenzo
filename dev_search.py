@@ -76,9 +76,9 @@ def main():
     
    
     
-    st.header("Let's Find You an A.I. Professional :rocket: ", anchor= False)
+    st.header("Let's Find You an A.I. Automation Professional :rocket: ", anchor= False)
     st.divider()
-    st.subheader('We will scout the :blue[WEB] to find you exactly who you are looking for :male-detective: \n\n', anchor= False)
+    st.subheader('We will scout the :blue[WEB] to find the most qualified candidate for your business automation needs :male-detective: \n\n', anchor= False)
 
     #API_KEY = os.getenv("OPENAI_API_KEY")
     
@@ -108,7 +108,7 @@ def main():
         st.write('You selected:', option)
         st.divider()
         st.subheader("Now tell us more about :blue[WHO] you are trying to find", anchor= False)
-        prompt_1 = st.text_area(" ",placeholder="I need an AI consultant for my business profiecient in Zapier and CRM.", max_chars=100)
+        prompt_1 = st.text_area(" ",placeholder="I need an AI consultant for my business proficient in Zapier and CRM.", max_chars=100)
         if st.form_submit_button("Submit"):
             if not form_name or not form_email:
                 st.warning("Ensure all mandatory fields are filled.")
