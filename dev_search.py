@@ -95,7 +95,7 @@ def main():
 
     agent = create_pandas_dataframe_agent(ChatOpenAI(temperature=0, model="gpt-3.5-turbo-1106", openai_api_key = constants.OPENAI_API_KEY),df,agent_type=AgentType.OPENAI_FUNCTIONS,)
     
-    st.write("could not load API")
+
     
     
     
