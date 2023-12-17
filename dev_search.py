@@ -86,7 +86,7 @@ def main():
 
         #url = "https://docs.google.com/spreadsheets/d/1_JsZEuAk7ikUgqy4MRj57xpra1XcDzu2Fu2GSRIBp3c/edit?usp=sharing"
 
-    conn = st.experimental_connection("gsheets", type=GSheetsConnection)
+    conn = st.connection("gsheets", type=GSheetsConnection)
 
     df = conn.read(worksheet = "Sheet1",  usecols=[0, 1, 2, 3])
     df_form = conn.read(worksheet = "Sheet2", usecols=list(range(2)), ttl=5)
