@@ -1,4 +1,4 @@
-import constants
+
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 import os
@@ -22,7 +22,7 @@ if "Request to Contact" not in st.session_state:
     st.session_state["Request to Contact"] = False
 
 def main():
-    openai.api_key = constants.OPENAI_API_KEY
+
     st.set_page_config(layout="centered", page_icon = "rocket")
     hide_streamlit_style = """
         <style>
@@ -75,14 +75,14 @@ def main():
     st.markdown(page_bg_img, unsafe_allow_html=True)
     
    
-      
+    
     st.header("Let's Find You an A.I. Professional :rocket: ", anchor= False)
     st.divider()
     st.subheader('We will scout the :blue[WEB] to find you exactly who you are looking for :male-detective: \n\n', anchor= False)
 
     #API_KEY = os.getenv("OPENAI_API_KEY")
     try:
-        chat_llm = ChatOpenAI(temperature=0.0, openai_api_key = constants.OPENAI_API_KEY)
+        chat_llm = ChatOpenAI(temperature=0.0, openai_api_key = "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")
 
         #url = "https://docs.google.com/spreadsheets/d/1_JsZEuAk7ikUgqy4MRj57xpra1XcDzu2Fu2GSRIBp3c/edit?usp=sharing"
 
@@ -93,7 +93,7 @@ def main():
         df_form = df_form.dropna(how="all")
         
 
-        agent = create_pandas_dataframe_agent(ChatOpenAI(temperature=0, model="gpt-3.5-turbo-1106", openai_api_key = constants.OPENAI_API_KEY),df,agent_type=AgentType.OPENAI_FUNCTIONS,)
+        agent = create_pandas_dataframe_agent(ChatOpenAI(temperature=0, model="gpt-3.5-turbo-1106", openai_api_key = "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"),df,agent_type=AgentType.OPENAI_FUNCTIONS,)
     except:
         st.write("could not load API")
     
