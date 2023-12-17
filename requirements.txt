@@ -4,3 +4,4 @@ pandas
 python-dotenv
 langchain-experimental
 st-gsheets-connection
+openai
