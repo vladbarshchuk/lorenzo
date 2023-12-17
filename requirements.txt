@@ -1,4 +1,5 @@
 streamlit==1.29.0
+constants
 langchain
 pandas
 python-dotenv
