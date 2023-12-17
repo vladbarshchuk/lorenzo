@@ -81,21 +81,21 @@ def main():
     st.subheader('We will scout the :blue[WEB] to find you exactly who you are looking for :male-detective: \n\n', anchor= False)
 
     #API_KEY = os.getenv("OPENAI_API_KEY")
-    try:
-        chat_llm = ChatOpenAI(temperature=0.0, openai_api_key = constants.OPENAI_API_KEY)
+    
+    chat_llm = ChatOpenAI(temperature=0.0, openai_api_key = constants.OPENAI_API_KEY)
 
         #url = "https://docs.google.com/spreadsheets/d/1_JsZEuAk7ikUgqy4MRj57xpra1XcDzu2Fu2GSRIBp3c/edit?usp=sharing"
 
-        conn = st.experimental_connection("gsheets", type=GSheetsConnection)
+    conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 
-        df = conn.read(worksheet = "Sheet1",  usecols=[0, 1, 2, 3])
-        df_form = conn.read(worksheet = "Sheet2", usecols=list(range(2)), ttl=5)
-        df_form = df_form.dropna(how="all")
+    df = conn.read(worksheet = "Sheet1",  usecols=[0, 1, 2, 3])
+    df_form = conn.read(worksheet = "Sheet2", usecols=list(range(2)), ttl=5)
+    df_form = df_form.dropna(how="all")
         
 
-        agent = create_pandas_dataframe_agent(ChatOpenAI(temperature=0, model="gpt-3.5-turbo-1106", openai_api_key = constants.OPENAI_API_KEY),df,agent_type=AgentType.OPENAI_FUNCTIONS,)
-    except:
-        st.write("could not load API")
+    agent = create_pandas_dataframe_agent(ChatOpenAI(temperature=0, model="gpt-3.5-turbo-1106", openai_api_key = constants.OPENAI_API_KEY),df,agent_type=AgentType.OPENAI_FUNCTIONS,)
+    
+    st.write("could not load API")
     
     
     
