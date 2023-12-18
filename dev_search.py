@@ -86,7 +86,7 @@ def main():
 
         #url = "https://docs.google.com/spreadsheets/d/1_JsZEuAk7ikUgqy4MRj57xpra1XcDzu2Fu2GSRIBp3c/edit?usp=sharing"
 
-    conn = st.connection("gsheets", type=GSheetsConnection)
+    conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 
     df = conn.read(worksheet = "Sheet1",  usecols=[0, 1, 2, 3])
     df_form = conn.read(worksheet = "Sheet2", usecols=list(range(2)), ttl=5)
@@ -194,7 +194,7 @@ def main():
                     st.subheader(f":blue[{df['Name'][0]}]", anchor= False)
         
                     #if prompt_1 is not None:
-                    st.link_button("Request to Contact", f"https://mail.google.com/mail/u/1/?view=cm&to=info@lorenzo-llm.com&su=Automation Project&body=Hey there! I am curious to discuss further details with {df['Name'][0]}")
+                    st.link_button("Request to Contact", "https://sites.google.com/view/lorenzo-llm/home")
                     st.divider()
                     st.header("Pay: ", anchor= False)
                     st.subheader(f":blue[{df['Pay per hour'][0]}]", anchor= False)
